@@ -22,11 +22,14 @@ function exampleOne(arr, dataType, itemToFind) {
   const isItemExist = arr.includes(itemToFind);
 
   if(isDataTypeMatched === true && isItemExist === true) {
+    // 위에서 선언한 변수가 true면 원하는 값을 출력해 줌
     console.log(`${itemToFind}은 배열이 존재합니다`);
-    return false;
+    return true;
+     // 위에서 선언한 변수가 false면 원하는 값을 출력해 줌
   } else if(isItemExist === false) {
     console.log(`${itemToFind}은 배열에 존재하지 않습니다`);
     return false;
+    // 데이터 타입이 맞지 않으면 알려줌
   } else if(isDataTypeMatched === false) {
     console.log(`찾으려는 항목은 ${dataType}이 아닙니다`);
     return false;
