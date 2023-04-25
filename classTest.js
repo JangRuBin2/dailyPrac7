@@ -1,7 +1,7 @@
 class User {
   
   constructor(name) {
-    this.name = name;
+    this._name = name;
   }
 
   sayHi() {
