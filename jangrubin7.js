@@ -8,9 +8,22 @@
 // class의 getter와 setter, hepler method로 '객체 지향' 방힉으로 조립하기도
 // 외부 함수, 내부 함수 구조 혹은 클로저로 '함수 지향' 방식을 조립하기도
 // 할 수 있는 자바스크립트의 변형성을 탐구해 보시기 바랍니다.
+// ? 클래스 테스트
+class Test {
+  constructor(test) {
+    this._test = test;
+  }
+
+  what() {
+    console.log(this.test)
+  }
+}
+let test = new Test("실험")
+// console.log(test)
 
 // exampleOne 함수는 arr, datatype, itemtofind를 매개변수로 받는다
 function exampleOne(arr, dataType, itemToFind) {
+  test.what()
   // 첫번째로 arr이 배열의 형태가 아니라면 false를 return함
   if(Array.isArray(arr) === false) {
     console.log("배열이 아닙니다");
@@ -40,37 +53,45 @@ const basicData = ['안녕하세요', '어디선가', '입력된', '데이터를
 // 배열을 담았을 때 배열인지 검사, 배열에 존재하는 데이터인지 검사, dataType이 매개변수와 일치하는지를 검사
 exampleOne(basicData, "number", "어디선가")
 
-class ArrayCheck {
-  constructor(basicData, dataType, itemToFind) {
-    this._basicData = basicData;
-    this._dataType = dataType;
-    this._itemToFind = itemToFind;
-  }
+// ! 클래스에 다 넣지말고 함수만 작성해서 필요할 때 불러다 쓸 수 있나?
+
+
+// class ArrayCheck {
+//   constructor(basicData, dataType, itemToFind) {
+//     this._basicData = basicData;
+//     this._dataType = dataType;
+//     this._itemToFind = itemToFind;
+//   }
   
-  get basicData() {
-    return this._basicData
-  }
+//   get basicData() {
+//     return this._basicData
+//   }
 
-  set basicData(basicData) {
-    this._basicData = basicData;
-  }
+//   set basicData(basicData) {
+//     this._basicData = basicData;
+//   }
 
-  get dataType() {
-    return this._dataType
-  }
+//   get itemToFind() {
+//     return this._itemToFind
+//   }
 
-  set dataType(dataType) {
-    this._dataType = dataType;
-  }
+//   set itemToFind(itemToFind) {
+//     this._itemToFind = itemToFind;
+//   }
 
-  test() {
-    console.log(`${this._basicData}`);
-    console.log(`${this._dataType}`)
-  }
-  
-}
+//   test() {
+//     console.log(`${this._basicData}`);
+//     console.log(`${this._dataType}`)
+//   }
+//   typeCheck() {
+//     // const test = typeof("this._basicData")
+//     // console.log(test);
+//     // console.log(basicData)
+//     // console.log(`${basicData}`)
+//   }
+// }
 
-let arrayCheck = new ArrayCheck(basicData,"number","어디선가")
-// 배열이 문자열로 넘어오네?
-arrayCheck.test()
+// let arrayCheck = new ArrayCheck(basicData,"number","어디선가")
+// // 배열이 문자열로 넘어오네?
+// arrayCheck.typeCheck()
 // console.log(arrayCheck)
