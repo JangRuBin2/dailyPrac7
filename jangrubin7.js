@@ -37,3 +37,5 @@ function exampleOne(arr, dataType, itemToFind) {
 }
 
 const basicData = ['안녕하세요', '어디선가', '입력된', '데이터를', '찾아보는', '힘수입니다']
+// 배열을 담았을 때 배열인지 검사, 배열에 존재하는 데이터인지 검사, dataType이 매개변수와 일치하는지를 검사
+exampleOne(basicData, "number", "어디선가")
