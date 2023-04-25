@@ -23,7 +23,7 @@ let test = new Test("실험")
 
 // exampleOne 함수는 arr, datatype, itemtofind를 매개변수로 받는다
 function exampleOne(arr, dataType, itemToFind) {
-  test.what()
+  // test.what()
   // 첫번째로 arr이 배열의 형태가 아니라면 false를 return함
   if(Array.isArray(arr) === false) {
     console.log("배열이 아닙니다");
@@ -56,42 +56,44 @@ exampleOne(basicData, "number", "어디선가")
 // ! 클래스에 다 넣지말고 함수만 작성해서 필요할 때 불러다 쓸 수 있나?
 
 
-// class ArrayCheck {
-//   constructor(basicData, dataType, itemToFind) {
-//     this._basicData = basicData;
-//     this._dataType = dataType;
-//     this._itemToFind = itemToFind;
-//   }
+class ArrayCheck {
+  constructor(basicData, dataType, itemToFind) {
+    this._basicData = basicData;
+    this._dataType = dataType;
+    this._itemToFind = itemToFind;
+  }
   
-//   get basicData() {
-//     return this._basicData
-//   }
+  get basicData() {
+    return this._basicData
+  }
 
-//   set basicData(basicData) {
-//     this._basicData = basicData;
-//   }
+  set basicData(basicData) {
+    this._basicData = basicData;
+  }
 
-//   get itemToFind() {
-//     return this._itemToFind
-//   }
+  get itemToFind() {
+    return this._itemToFind
+  }
 
-//   set itemToFind(itemToFind) {
-//     this._itemToFind = itemToFind;
-//   }
+  set itemToFind(itemToFind) {
+    this._itemToFind = itemToFind;
+  }
 
-//   test() {
-//     console.log(`${this._basicData}`);
-//     console.log(`${this._dataType}`)
-//   }
-//   typeCheck() {
-//     // const test = typeof("this._basicData")
-//     // console.log(test);
-//     // console.log(basicData)
-//     // console.log(`${basicData}`)
-//   }
-// }
+  test() {
+    console.log(`${this._basicData}`);
+    console.log(`${this._dataType}`)
+  }
+  arrayCheck() {
+    // 배열로 넘어온 것 확인
+  //  console.log(this._basicData)
+  if(Array.isArray(this._basicData) === true) {
+    // 되네요
+    console.log("되냐?")
+  }
+  }
+}
 
-// let arrayCheck = new ArrayCheck(basicData,"number","어디선가")
+let arrayCheck = new ArrayCheck(basicData,"number","어디선가")
 // // 배열이 문자열로 넘어오네?
-// arrayCheck.typeCheck()
+arrayCheck.arrayCheck()
 // console.log(arrayCheck)
