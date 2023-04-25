@@ -47,8 +47,30 @@ class ArrayCheck {
     this._itemToFind = itemToFind;
   }
   
+  get basicData() {
+    return this._basicData
+  }
+
+  set basicData(basicData) {
+    this._basicData = basicData;
+  }
+
+  get dataType() {
+    return this._dataType
+  }
+
+  set dataType(dataType) {
+    this._dataType = dataType;
+  }
+
+  test() {
+    console.log(`${this._basicData}`);
+    console.log(`${this._dataType}`)
+  }
   
 }
 
 let arrayCheck = new ArrayCheck(basicData,"number","어디선가")
-console.log(arrayCheck)
+// 배열이 문자열로 넘어오네?
+arrayCheck.test()
+// console.log(arrayCheck)
